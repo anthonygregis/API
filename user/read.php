@@ -35,12 +35,12 @@ if($num>0){
         extract($row);
  
         $user_info=array(
-            "uuid" => $uuid,
+            "UUID" => $uuid,
             "username" => $username,
             "fname" => $fname,
             "lname" => $lname,
             "phone" => $phone,
-            "permissionLevel" => $permissionLevel
+            "user_level" => $permissionLevel
         );
  
         array_push($users_arr["records"], $user_info);
