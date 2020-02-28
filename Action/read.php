@@ -45,7 +45,7 @@ if($count > 0){
 else {
 
     echo json_encode(
-        array("body" => array(), "count" => 0);
+        array("body" => array(), "count" => 0)
     );
 }
 ?>
