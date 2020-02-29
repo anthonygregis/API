@@ -29,7 +29,7 @@ router.get("/users", (req, res) => {
     })
 })
 
-router.get("/user/:uuid", (req, res) => {
+router.get("/users/:uuid", (req, res) => {
     console.log("Fetching user with uuid: " + req.params.uuid)
 
     const connection = getConnection()
@@ -55,7 +55,7 @@ router.get("/user/:uuid", (req, res) => {
     //res.end()
 })
 
-router.get("/user/:uuid/name", (req, res) => {
+router.get("/users/:uuid/name", (req, res) => {
     console.log("Fetching user's name with uuid: " + req.params.uuid)
 
     const connection = getConnection()
