@@ -55,6 +55,32 @@ router.get("/user/:uuid", (req, res) => {
     //res.end()
 })
 
+router.get("/user/:uuid/name", (req, res) => {
+    console.log("Fetching user's name with uuid: " + req.params.uuid)
+
+    const connection = getConnection()
+
+    const userUuid = req.params.uuid
+    const queryString = "SELECT fname, lname FROM users WHERE UUID = ?"
+    connection.query(queryString, [userUuid], (err, rows, fields) => {
+        if (err) {
+            console.log("Failed to query for uuid: " + err)
+            res.sendStatus(500)
+            return
+        }
+
+        console.log("Successfull query for uuid: " + userUuid)
+
+        const users = rows.map((row) => {
+            return {firstName: row.fname, lastName: row.lname}
+        })
+
+        res.json(users)
+    })
+
+    //res.end()
+})
+
 router.post('/user_create', (req, res) => {
     console.log("Trying to create new user")
 
