@@ -1,23 +1,7 @@
-const { spawn } = require('child_process')
-const pino = require('pino')
-const { getPrettyStream: pinoGetPrettyStream } = require('pino/lib/tools')
-const { multistream } = require('pino-multi-stream')
-const pinoPretty = require('pino-pretty')
-const teeStream = spawn(
-  process.execPath,
-  [require.resolve('pino-tee'), 'debug', `logs/debug.log`, 'warn', 'logs/warn.log', 'info', 'logs/info.log'],
-  { cwd: process.cwd(), env: process.env },
-)
-const prettyConsoleStream = pinoGetPrettyStream(
-  { translateTime: true },
-  pinoPretty,
-  process.stdout,
-)
-const logger = pino(
-  {},
-  multistream([{ stream: prettyConsoleStream }, { stream: teeStream.stdin }]),
-)
+// Load App Server (EXPRESS)
 const express = require('express')
+const pino = require('pino');
+const logger = pino({ level: process.env.LOG_LEVEL || 'debug', prettyPrint: true });
 const app = express()
 const PORT = process.env.PORT || 3000
 const router = require('./routes/users.js')
