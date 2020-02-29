@@ -1,24 +1,24 @@
 // Load App Server (EXPRESS)
 const express = require('express')
+const pino = require('pino');
+const logger = pino({ level: process.env.LOG_LEVEL || 'debug', prettyPrint: true });
 const app = express()
-const morgan = require('morgan')
-
-const router = require('./routes/user.js')
+const PORT = process.env.PORT || 3000
+const router = require('./routes/users.js')
 
 app.use(router)
 
 app.use(express.static('./public'))
 
-app.use(morgan('short'))
-
 app.get("/", (req, res) => {
-    console.log("Responding to root route")
-    res.send("Hello World")
+    logger.debug('Requested /');
+    res.json({
+        message: 'Welcome to LifeInvader REST API'
+    })
 })
 
-const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
-    console.log("Server is up and listening on: " + PORT)
+    logger.info('Server running on port %d', PORT);
 })
 
 
