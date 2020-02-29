@@ -86,7 +86,7 @@ router.post('/user_create', (req, res) => {
 
 const pool = mysql.createPool({
     connectionLimit: 10,
-    host: '149.28.58.181',
+    host: 'localhost',
     user: 'lifeadmin',
     password: 'wGo67?v7',
     database: 'lifeinvader'
