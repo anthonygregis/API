@@ -1,39 +1,26 @@
 {
-  "name": "lf-corp-api",
+  "name": "NewAPI",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thedevtron/API.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thedevtron/API/issues"
-  },
-  "homepage": "https://github.com/thedevtron/API#readme",
   "dependencies": {
     "bcrypt": "^4.0.0",
     "bip39": "^3.0.2",
     "body-parser": "^1.19.0",
-    "child_process": "^1.0.2",
+    "date-and-time": "^0.12.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-pino-logger": "^4.0.0",
-    "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.9.1",
+    "mongoose": "^5.9.2",
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.2",
-    "pino": "^5.17.0",
-    "pino-multi-stream": "^4.3.0",
-    "pino-tee": "^0.3.0",
     "uuid": "^7.0.1"
   },
   "devDependencies": {
-    "pino-pretty": "^3.6.0"
+    "nodemon": "^2.0.2"
   }
 }
