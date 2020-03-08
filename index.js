@@ -1,7 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-import LogRocket from 'logrocket';
-LogRocket.init('zwqirp/api');
 const PORT = process.env.PORT || 3000
 
 const app = express();
