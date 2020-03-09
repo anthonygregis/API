@@ -1,7 +1,7 @@
-const router = require('express').Router();
+module.exports = app => {
+    const token = require("../controllers/auth.js");
 
-router.post('/register', (req,res) => {
-    res.send('Register');
-});
+    //Create a token
+    app.post("/token", token.create)
 
-module.exports = router;
+  };

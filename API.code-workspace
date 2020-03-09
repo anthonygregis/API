@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "controllers"
+		},
+		{
+			"path": "models"
+		},
+		{
+			"path": "routes"
+		},
+		{
+			"path": "utils"
+		},
+		{
+			"path": "middleware"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/$RECYCLE.BIN": true,
+			"**/System Volume Information": true
+		}
+	}
+}
